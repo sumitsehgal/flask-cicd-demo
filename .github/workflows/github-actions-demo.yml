@@ -62,7 +62,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
-            docker stop flask-container || true
-            docker rm flask-container || true
-            docker run -d --name flask-container -p 5000:5000 --env-file .env ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+            echo "FLASK_ENV=production" > .env
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+            sudo docker stop flask-container || true
+            sudo docker rm flask-container || true
+            sudo docker run -d --name flask-container -p 5000:5000 --env-file .env ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
