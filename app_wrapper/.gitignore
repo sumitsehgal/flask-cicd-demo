@@ -1,0 +1,38 @@
+# Bytecode & Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Virtual Environment
+venv/
+.env
+*.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+*.egg-info/
+dist/
+build/
+
+# Pytest & Testing
+.coverage
+htmlcov/
+pytest_cache/
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+*.dockerfile
+docker-compose.override.yml
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
